@@ -1,0 +1,21 @@
+Feature,Original,Encoded
+DayOfWeek,Friday,0
+DayOfWeek,Monday,1
+DayOfWeek,Saturday,2
+DayOfWeek,Sunday,3
+DayOfWeek,Thursday,4
+DayOfWeek,Tuesday,5
+DayOfWeek,Wednesday,6
+FareTypeAbbr,ADA,0
+FareTypeAbbr,CITY,1
+FareTypeAbbr,NEMT,2
+Purpose,Adult Day Program,0
+Purpose,Dialysis,1
+Purpose,Functional Assessment,2
+Purpose,Grocery,3
+Purpose,Medical Appointment,4
+Purpose,Pharmacy,5
+Purpose,Physical Therapy,6
+Purpose,Work,7
+SchedStatusName,NoShow,0
+SchedStatusName,Performed,1
