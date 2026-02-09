@@ -296,7 +296,7 @@ with tab_predict:
         st.divider()
         st.markdown(
             """
-            **Suggestion pool:** {} addresses loaded from `models/addresses.csv`.  
+            **Suggestion pool:** {} addresses loaded from `models/addresses.csv`.
             Increase `max_rows` inside `load_address_catalog()` if you want full coverage (1.2M rows).
             """.format(len(address_catalog))
         )
@@ -323,13 +323,13 @@ with tab_manifest:
 
 # ----- Case study tab -----
 with tab_case:
-    st.subheader("Architecture (mirrors your notebook)")
+    st.subheader("Architecture")
     st.markdown(
         """
-1) Address encoder (`models/addresses_model_embeddings.joblib`) turns pickup + dropoff into dense vectors (all-MiniLM-L6-v2).  
-2) Distance regressor (`models/distance_model.h5`) predicts straight-line miles from the embeddings.  
-3) Booking status head (`models/booking_status_model.h5`) consumes derived calendar/time features + label-encoded cols; output is P(Performed).  
-4) Route clustering (`models/route_clustering_model.joblib`) KMeans over concatenated address embeddings to assign a run/route.  
+1) Address encoder (`models/addresses_model_embeddings.joblib`) turns pickup + dropoff into dense vectors (all-MiniLM-L6-v2).
+2) Distance regressor (`models/distance_model.h5`) predicts straight-line miles from the embeddings.
+3) Booking status head (`models/booking_status_model.h5`) consumes derived calendar/time features + label-encoded cols; output is P(Performed).
+4) Route clustering (`models/route_clustering_model.joblib`) KMeans over concatenated address embeddings to assign a run/route.
 5) Human-readable mappings live in `models/booking_le_mapping.csv`; address suggestions use `models/addresses.csv`.
         """
     )
@@ -346,8 +346,8 @@ with tab_case:
     st.subheader("Notes")
     st.markdown(
         """
-- Models run on CPU; no internet needed once artifacts are present.  
-- To widen address suggestions, raise `max_rows` in `load_address_catalog` or swap in a vector search (FAISS) against the same embeddings.  
+- Models run on CPU; no internet needed once artifacts are present.
+- To widen address suggestions, raise `max_rows` in `load_address_catalog` or swap in a vector search (FAISS) against the same embeddings.
 - Replace clustering with your live routing solver by swapping `predict_route_cluster`.
         """
     )
